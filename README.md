@@ -29,14 +29,14 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 
 **Key features:**
 
-- Nonlinear 3-DOF coupled dynamics with strong input coupling (ε = 0.2)
-- Linearized state-space model around the hovering equilibrium
-- Augmented LQR-I controller (8 states: 6 physical + 2 integrators) designed in MATLAB
-- Real-time control loop executing at 100 Hz on an Arduino microcontroller
-- GY-85 IMU (ADXL345 accelerometer + ITG-3205 gyroscope) for elevation angle and rate sensing
-- Two analog potentiometers for mechanical angle feedback (roll and yaw)
-- Dual brushless motor actuators driven through calibrated ESCs
-- LabVIEW supervisory VI for real-time telemetry, command injection, and gain scheduling over serial
+- Nonlinear 3-DOF coupled dynamics with strong input coupling (ε = 0.2).
+- Linearized state-space model around the hovering equilibrium.
+- Augmented LQR-I controller (8 states: 6 physical + 2 integrators) designed in MATLAB.
+- Real-time control loop executing at 100 Hz on an Arduino microcontroller.
+- GY-85 IMU (ADXL345 accelerometer + ITG-3205 gyroscope) for elevation angle and rate sensing.
+- Two analog potentiometers for mechanical angle feedback (roll and yaw).
+- Dual brushless motor actuators driven through calibrated ESCs.
+- LabVIEW supervisory VI for real-time telemetry, command injection, and gain scheduling over serial.
 
 ---
 
