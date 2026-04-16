@@ -44,7 +44,7 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 
 > 📷 **Photo of the physical rig**
 >
-> ![Physical model of the 3-DOF VTOL helicopter rig](docs/media/model_photo.jpg)
+> ![Physical model of the 3-DOF VTOL helicopter rig](docs/media/model_photo.png)
 >
 > *The assembled 3-DOF VTOL rig: aluminum + wood arm mounted on a central pivot, with two brushless motors and the GY-85 IMU module.*
 
@@ -463,7 +463,7 @@ vtol-lqr-helicopter-rig/
 └── docs/
     ├── vtol_presentation.pdf          # Project presentation slides
     └── media/
-        ├── model_photo.jpg            # Photo of the physical rig
+        ├── model_photo.png            # Photo of the physical rig
         ├── system_overview.png        # System architecture diagram
         ├── demo_thumbnail.jpg         # Video thumbnail
         └── demo_video.mp4             # Live demonstration video
