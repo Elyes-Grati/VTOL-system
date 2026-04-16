@@ -64,7 +64,7 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 
 >  **Live demonstration**
 >
-> [![Demo video thumbnail](docs/media/demo_thumbnail.png)](docs/media/demo_video.mp4)
+> [![Demo video thumbnail](https://img.youtube.com/vi/HBZgJ2Um5NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=HBZgJ2Um5NE)
 >
 > The demo showcases the rig stabilizing from a perturbed initial condition, tracking elevation and yaw setpoints in real-time while rejecting roll disturbances — all driven by the closed-loop LQR-I controller running across the Arduino–LabVIEW pipeline.
 
@@ -464,9 +464,7 @@ vtol-lqr-helicopter-rig/
     ├── vtol_presentation.pdf          # Project presentation slides
     └── media/
         ├── model_photo.png            # Photo of the physical rig
-        ├── system_overview.png        # System architecture diagram
-        ├── demo_thumbnail.png         # Video thumbnail
-        └── demo_video.mp4             # Live demonstration video
+        └── system_overview.png        # System architecture diagram
 ```
 
 ---
