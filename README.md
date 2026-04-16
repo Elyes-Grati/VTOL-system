@@ -1,6 +1,6 @@
 # 3-DOF VTOL Helicopter Rig — LQR-I Control System
 
-**Full-stack implementation of a 3-degree-of-freedom (3-DOF) VTOL helicopter rig, controlled by a Linear Quadratic Regulator with integral action (LQR-I). Developed as a project for the Nonlinear Control Systems class at INSAT, class IIA4.**
+** Full-stack implementation of a 3-degree-of-freedom (3-DOF) VTOL helicopter rig, controlled by a Linear Quadratic Regulator with integral action (LQR-I). Developed as a project for the Nonlinear Control Systems class at INSAT, class IIA4.**
 
 ---
 
