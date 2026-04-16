@@ -1,6 +1,6 @@
 # 3-DOF VTOL Helicopter Rig — LQR-I Control System
 
-**Full-stack implementation of a 3-degree-of-freedom VTOL helicopter rig, controlled by a Linear Quadratic Regulator with integral action (LQR-I). Developed as a final-year engineering project at [Institution Name], class IIA4.**
+**Full-stack implementation of a 3-degree-of-freedom (3-DOF) VTOL helicopter rig, controlled by a Linear Quadratic Regulator with integral action (LQR-I). Developed as a project for the Nonlinear Control Systems class at INSAT, class IIA4.**
 
 ---
 
@@ -33,10 +33,40 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 - Linearized state-space model around the hovering equilibrium
 - Augmented LQR-I controller (8 states: 6 physical + 2 integrators) designed in MATLAB
 - Real-time control loop executing at 100 Hz on an Arduino microcontroller
-- ADXL345 accelerometer + ITG-3205 gyroscope (IMU) for elevation rate sensing
+- GY-85 IMU (ADXL345 accelerometer + ITG-3205 gyroscope) for elevation angle and rate sensing
 - Two analog potentiometers for mechanical angle feedback (roll and yaw)
 - Dual brushless motor actuators driven through calibrated ESCs
 - LabVIEW supervisory VI for real-time telemetry, command injection, and gain scheduling over serial
+
+---
+
+### Physical Model
+
+> 📷 **Photo of the physical rig**
+>
+> ![Physical model of the 3-DOF VTOL helicopter rig](docs/media/model_photo.jpg)
+>
+> *The assembled 3-DOF VTOL rig: aluminum + wood arm mounted on a central pivot, with two brushless motors and the GY-85 IMU module.*
+
+---
+
+### System Overview
+
+> 📐 **System architecture diagram**
+>
+> ![System overview diagram](docs/media/system_overview.png)
+>
+> *Block diagram showing the closed-loop pipeline: sensors → Arduino → serial → LabVIEW LQR-I controller → ESC commands → actuators.*
+
+---
+
+### Demo Video
+
+> 🎬 **Live demonstration**
+>
+> [![Demo video thumbnail](docs/media/demo_thumbnail.jpg)](docs/media/demo_video.mp4)
+>
+> The demo showcases the rig stabilizing from a perturbed initial condition, tracking elevation and yaw setpoints in real-time while rejecting roll disturbances — all driven by the closed-loop LQR-I controller running across the Arduino–LabVIEW pipeline.
 
 ---
 
@@ -52,7 +82,7 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
                              │ USB / Serial (230400 baud)
                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    Arduino (ATmega328P)                              │
+│                    Arduino Uno                                       │
 │  - 100 Hz control loop (10 ms period)                               │
 │  - Reads IMU (I2C: ADXL345 + ITG-3205)                              │
 │  - Reads potentiometers (ADC A0, A1)                                │
@@ -82,21 +112,22 @@ The rig consists of a rigid arm of length **l = 0.56 m** mounted on a central pi
 |-----------|--------|-------|------|
 | Arm length | l | 0.56 | m |
 | Motor lateral offset | d | 0.14 | m |
+| Total mass | m | 0.03 | kg |
 | Yaw moment of inertia | J_ψ | 0.23 | kg·m² |
 | Elevation moment of inertia | J_e | 0.21 | kg·m² |
 | Roll moment of inertia | J_θ | 0.0032 | kg·m² |
 | Input coupling coefficient | ε | 0.2 | — |
-| Hover thrust per unit mass | u₀ | mg | N |
+| Hover thrust (u₀ = mg) | u₀ | 0.2943 | N |
 
 ### Hardware Bill of Materials
 
 | Component | Role |
 |-----------|------|
-| Arduino Uno (ATmega328P) | Embedded controller, sensor hub, ESC driver |
-| ADXL345 (I2C, addr 0x53) | 3-axis accelerometer — elevation angle and rate |
-| ITG-3205 (I2C, addr 0x68) | 3-axis gyroscope — angular rates |
+| Arduino Uno | Embedded controller, sensor hub, ESC driver |
+| GY-85 IMU (ADXL345 + ITG-3205, I2C) | 3-axis accelerometer + gyroscope — elevation angle, elevation rate, and angular rates |
 | 2× Analog potentiometer | Roll angle (A0) and yaw angle (A1) |
 | 2× Brushless motor + ESC | Actuators — M1 (pin 9), M2 (pin 10) |
+| Various inexpensive hardware (wood + aluminum + screws) | Mechanical frame and pivot structure |
 | Dedicated power supply | Motor power rail, isolated from logic |
 | PC running LabVIEW | Supervisory control, real-time visualization |
 
@@ -267,7 +298,7 @@ F₂ = (u − v) / 2
 
 ## 7. Sensor Suite and Signal Processing
 
-### IMU: ADXL345 + ITG-3205
+### IMU: GY-85 (ADXL345 + ITG-3205)
 
 Both sensors communicate over I2C at 400 kHz. The ADXL345 provides 3-axis acceleration from which the elevation (pitch) angle is computed:
 
@@ -430,7 +461,12 @@ vtol-lqr-helicopter-rig/
 │   └── FinalFinal.vi                  # LabVIEW VI: supervisory control, visualization
 │
 └── docs/
-    └── vtol_presentation.pdf          # Project presentation slides
+    ├── vtol_presentation.pdf          # Project presentation slides
+    └── media/
+        ├── model_photo.jpg            # Photo of the physical rig
+        ├── system_overview.png        # System architecture diagram
+        ├── demo_thumbnail.jpg         # Video thumbnail
+        └── demo_video.mp4             # Live demonstration video
 ```
 
 ---
