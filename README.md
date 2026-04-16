@@ -473,12 +473,12 @@ vtol-lqr-helicopter-rig/
 
 **IIA4 — Final Year Engineering Project**
 
-| Name | Role |
-|------|------|
-| Grati Elyes | Control design, MATLAB modeling |
-| Njeh Oussema | Arduino firmware, embedded systems |
-| Snoun Ferid | LabVIEW interface, system integration |
-| Khelil Souheib | Hardware, mechanical design, testing |
+| Name|
+|-----------|
+| Grati Elyes |
+| Njeh Oussema |
+| Snoun Ferid |
+| Khelil Souheib |
 
 ---
 
