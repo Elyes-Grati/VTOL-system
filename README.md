@@ -42,7 +42,7 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 
 ### Physical Model
 
-> 📷 **Photo of the physical rig**
+>  **Photo of the physical rig**
 >
 > ![Physical model of the 3-DOF VTOL helicopter rig](docs/media/model_photo.png)
 >
@@ -52,7 +52,7 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 
 ### System Overview
 
-> 📐 **System architecture diagram**
+>  **System architecture diagram**
 >
 > ![System overview diagram](docs/media/system_overview.png)
 >
@@ -62,7 +62,7 @@ The control objective is to regulate elevation, roll, and yaw to desired setpoin
 
 ### Demo Video
 
-> 🎬 **Live demonstration**
+>  **Live demonstration**
 >
 > [![Demo video thumbnail](docs/media/demo_thumbnail.png)](docs/media/demo_video.mp4)
 >
