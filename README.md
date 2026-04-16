@@ -428,7 +428,7 @@ The LabVIEW VI serves as the **real-time supervisory controller and human-machin
 - **Setpoint management**: Allows the operator to inject reference values for e, θ, Ψ
 - **ESC command generation**: Converts computed forces F₁, F₂ to PWM microsecond values and transmits `<esc1>,<esc2>\n` back to the Arduino
 - **Real-time charts**: Waveform graphs for all 6 state signals and both control outputs
-- **Safety limits**: ESC outputs are clamped to [1000, 1700] µs before transmission
+- **Safety limits**: ESC outputs are clamped to [1000, 1700]  µs before transmission
 
 ---
 
